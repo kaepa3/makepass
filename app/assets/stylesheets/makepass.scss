@@ -1,0 +1,78 @@
+// Place all the styles related to the makepass controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$green: #008000;
+$whitesmoke: #f5f5f5;
+$dimgray: #696969;
+$floralwhite: #fffaf0;
+$lightslategray: #778899;
+$darkred: #8B0000;  
+
+$common_radius: 10px; 
+$common_tickness: 2px; 
+
+#app_title
+{
+  text-align: center;
+  background-color: $green;  
+  margin: 20px auto;
+
+}
+
+td
+{
+  padding: 10px 10px 0px;
+}
+body
+{
+  background-color: $whitesmoke;  
+}
+
+#show_body
+{
+  #input_area
+  {
+    margin: 0 auto;
+    width: 80%;  
+    border-radius: $common_radius;
+    background-color: $floralwhite;
+    border: $common_tickness solid $lightslategray;
+    #show_title
+    {
+      font-size: 120%;
+      text-align: center;
+      font-weight: bold; 
+    }
+
+    #enable_select
+    {
+      margin-left: 10px;
+      float: left;
+    }
+  }
+  
+  #show_output
+  {
+    clear: both;
+    width: 50%;  
+    margin: 10px auto;
+    
+    #result_area
+    {
+      text-align: center;
+      font-weight: bold; 
+
+      #error_code
+      {
+        color: $darkred;
+      }
+    }
+
+    #show_area
+    {
+      font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+      width: 100%;  
+      height: 180px;
+    }
+  }
+}

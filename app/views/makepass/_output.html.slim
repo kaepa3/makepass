@@ -1,0 +1,5 @@
+#result_area
+  = "Result"
+  #error_code
+    = "err: " + @err_text unless @err_text.blank?
+= text_area_tag "show_area", @passwords.join("\n"), placeholder: "output area"

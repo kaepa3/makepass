@@ -1,0 +1,31 @@
+#show_body
+  #input_area
+    #show_title
+      = "setting this"
+
+    table
+      tr
+        td
+         = label "", "Password Length", id: "label_modifi"
+        td
+         = text_field :pass, :length, {oninput: "update_status()", maxlength:"2", pattern: "^[0-9]$"}
+      tr
+        td
+         = label "", "Character Kind", id: "label_modifi"
+        td
+          #enable_select
+            = check_box_tag :number, true, @number_checked, {onchange: "update_status()"}
+            = label :number, "Number"
+          #enable_select
+            = check_box_tag :uppercase, true, @upper_checked, {onchange: "update_status()"}
+            = label :uppercase, "Uppercase"
+          #enable_select
+            = check_box_tag :lowercase, true, @lower_checked, {onchange: "update_status()"}
+            = label :lowercase, "Lowercase"
+          #enable_select
+            = check_box_tag :symbol, true, @symbol_checked, {onchange: "update_status()"}
+            = label :symbol, "Symbol"
+
+  #show_output
+    = render @output
+
