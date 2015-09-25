@@ -1,7 +1,6 @@
 class MakepassController < ApplicationController
 
   ENABLE_KEYS = %w(number uppercase lowercase symbol length)
-  LENGTH_KEY = ''
   before_action :initial_data
 
   # initial process
@@ -14,7 +13,7 @@ class MakepassController < ApplicationController
   # display main
   def show
     update
-    @output ="output"
+    @output = "output"
   end
 
   # ajax event receive => should fix input check
