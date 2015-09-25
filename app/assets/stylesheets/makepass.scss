@@ -6,15 +6,15 @@ $whitesmoke: #f5f5f5;
 $dimgray: #696969;
 $floralwhite: #fffaf0;
 $lightslategray: #778899;
-$darkred: #8B0000;  
+$darkred: #8B0000;
 
-$common_radius: 10px; 
-$common_tickness: 2px; 
+$common_radius: 10px;
+$common_tickness: 2px;
 
 #app_title
 {
   text-align: center;
-  background-color: $green;  
+  background-color: $green;
   margin: 20px auto;
 
 }
@@ -25,15 +25,25 @@ td
 }
 body
 {
-  background-color: $whitesmoke;  
+  background-color: $whitesmoke;
 }
 
 #show_body
 {
+  #devide
+  {
+    padding: 0;
+  }
+  #pass
+  {
+    text-align: center;
+    width: 10%;
+  }
+
   #input_area
   {
     margin: 0 auto;
-    width: 80%;  
+    width: 80%;
     border-radius: $common_radius;
     background-color: $floralwhite;
     border: $common_tickness solid $lightslategray;
@@ -50,7 +60,7 @@ body
       float: left;
     }
   }
-  
+
   #show_output
   {
     clear: both;

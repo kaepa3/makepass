@@ -12,7 +12,19 @@ class MakepassController < ApplicationController
 
   # display main
   def show
-    update
+    @number_checked = true
+    @upper_checked = true
+    @lower_checked = true
+    @symbol_checked = false
+    @length = 8
+    prop = {
+      length: @length,
+      use_upper: @upper_checked,
+      use_lower: @lower_checked,
+      use_number: @number_checked,
+      use_symbol: @symbol_checked
+    }
+    @passwords = view_context.get_password(6, prop)
     @output = "output"
   end
 

@@ -2,13 +2,12 @@
   #input_area
     #show_title
       = "setting this"
-
     table
       tr
         td
          = label "", "Password Length", id: "label_modifi"
         td
-         = text_field :pass, :length, {oninput: "update_status()", maxlength:"2", pattern: "^[0-9]$"}
+         = text_field_tag :pass, @length, {oninput: "update_status()", maxlength:"2", pattern: "^[0-9]$"}
       tr
         td
          = label "", "Character Kind", id: "label_modifi"

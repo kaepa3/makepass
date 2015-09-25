@@ -10,7 +10,7 @@ makedata = ->
   array = {}
   for member in enable_members
     array[member] = $("#" + member).prop("checked")
-  array["length"] = $("#pass_length").val()
+  array["length"] = $("#pass").val()
   return array
 
 $ ->
