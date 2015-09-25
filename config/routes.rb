@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'makepass/show'
   post 'makepass/show'
   post 'makepass/update'
+  root :to => 'makepass#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
