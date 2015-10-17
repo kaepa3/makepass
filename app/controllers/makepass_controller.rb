@@ -25,7 +25,6 @@ class MakepassController < ApplicationController
       use_symbol: @symbol_checked
     }
     @passwords = view_context.get_password(6, prop)
-    @output = "output"
   end
 
   # ajax event receive => should fix input check
@@ -46,7 +45,10 @@ class MakepassController < ApplicationController
       use_number: params['number'] || false,
       use_symbol: params['symbol'] || false
     }
-
     @passwords = view_context.get_password(6, prop)
+    puts @passwords
+    # render json: @passwordsu
+    @output = "output"
+    render partial: @output
   end
 end

@@ -1,11 +1,7 @@
-@update_status = ->
-  $.ajax
-    url: '/makepass/update'
-    type: "POST", 
-    data: makedata()
-  return
+$ (event, data) ->
+  console.log data
 
-makedata = ->  
+makedata = ->
   enable_members = [ 'uppercase','lowercase', 'symbol', 'number']
   array = {}
   for member in enable_members
@@ -13,10 +9,21 @@ makedata = ->
   array["length"] = $("#pass").val()
   return array
 
-$ ->
-  $('#text_name').on
-    'ajax:success': (event, data, status, xhr) ->
-      console.log "kjkjhkjhkh"
-      $('#show_anyway').html(data)
-    'ajax:error': (event, xhr, status, error) ->
-      console.log "kjkgyiujhkjhkh"
+@update_status = ->
+  thisevent = $.ajax ({
+    async: true
+    url: '/makepass/update'
+    type: "POST",
+    data: makedata()
+    })
+
+  thisevent.done (data, stat, xhr) ->
+    $('#show_output').html(data)
+    console.log { done: stat, data: data, xhr: xhr }
+
+  thisevent.fail (xhr, stat, err) ->
+    console.log { fail: stat, error: err, xhr: xhr }
+    alert xhr.responseText
+
+  thisevent.always (res1, stat, res2) ->
+    console.log { always: stat, res1: res1, res2: res2 }

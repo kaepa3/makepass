@@ -16,7 +16,6 @@ module MakepassHelper
     count.times do
       passwords << (0...length).map { wordset[rand(wordset.length)] }.join
     end
-    puts passwords
     return passwords
   end
 
